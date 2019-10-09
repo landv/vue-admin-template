@@ -36,6 +36,9 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    /**
+     * mock模拟数据
+     */
     proxy: {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
@@ -48,7 +51,27 @@ module.exports = {
       }
     },
     after: require('./mock/mock-server.js')
+    /**
+     * mock模拟数据结束
+     */
+    /**
+     * vue 本地跨域代理转发
+     */
+    // proxy: {
+    //   '/v1': { // 将www.exaple.com印射为/apis
+    //     target: 'http://localhost/v1/', // 接口域名
+    //     secure: false, // 如果是https接口，需要配置这个参数
+    //     changeOrigin: true, // 是否跨域
+    //     pathRewrite: {
+    //       '^/v1': '' // 需要rewrite的,
+    //     }
+    //   }
+    // }
+    /**
+     * vue 本地跨域代理转发，结束
+     */    
   },
+
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
